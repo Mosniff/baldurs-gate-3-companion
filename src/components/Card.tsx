@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {};
 
-function Card({}: Props) {
+const Card = ({}: Props) => {
   return (
     <div className="p-2 border border-black bg-black flex items-center justify-between rounded">
       <Image
@@ -19,6 +19,6 @@ function Card({}: Props) {
       </div>
     </div>
   );
-}
+};
 
-export default Card;
+export { Card };

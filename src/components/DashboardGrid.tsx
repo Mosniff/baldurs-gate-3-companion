@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "./Card";
+import { Card } from "./Card";
 
 type Props = {};
 
-function DashboardGrid({}: Props) {
+const DashboardGrid = ({}: Props) => {
   return (
     <div className="grid grid-cols-4 gap-4">
       <Card />
@@ -14,6 +14,6 @@ function DashboardGrid({}: Props) {
       <Card />
     </div>
   );
-}
+};
 
-export default DashboardGrid;
+export { DashboardGrid };
