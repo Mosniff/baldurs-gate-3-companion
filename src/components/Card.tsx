@@ -1,20 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
+type Props = {
+  imagePath?: string;
+  imageAlt?: string;
+  title: string;
+};
 
-const Card = ({}: Props) => {
+const Card = ({ imageAlt, imagePath, title }: Props) => {
   return (
-    <div className="p-2 border border-black bg-black flex items-center justify-between rounded">
+    <div className="w-full p-2 border border-black bg-black flex items-center justify-between rounded">
       <Image
-        src="/class-emblems/barbarian.webp"
-        width={100}
-        height={100}
-        alt="barbarian"
+        src={imagePath || "/fallback.png"}
+        width={75}
+        height={75}
+        alt={imageAlt || "image"}
       />
       <div className="w-full flex justify-center">
         <p className="text-companion-gold text-3xl capitalize font-sans">
-          barbarian
+          {title}
         </p>
       </div>
     </div>
