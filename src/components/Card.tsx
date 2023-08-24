@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {
   imagePath?: string;
@@ -7,9 +9,12 @@ type Props = {
   title: string;
 };
 
-const Card = ({ imageAlt, imagePath, title }: Props) => {
+export const Card = ({ imageAlt, imagePath, title }: Props) => {
   return (
-    <div className="w-full p-2 border border-black bg-black flex items-center justify-between rounded">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="w-full p-2 border border-black bg-black flex items-center justify-between rounded"
+    >
       <Image
         src={imagePath || "/fallback.png"}
         width={75}
@@ -21,8 +26,6 @@ const Card = ({ imageAlt, imagePath, title }: Props) => {
           {title}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
-
-export { Card };

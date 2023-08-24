@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import { Card } from "./Card";
 import { ClassCard } from "./ClassCard";
 import { CharacterClass } from "@/types/CharacterClass";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -20,14 +21,26 @@ const characterClasses: CharacterClass[] = [
   "wizard",
 ];
 
-const DashboardGrid = ({}: Props) => {
+export const DashboardGrid = ({}: Props) => {
   return (
-    <div className="grid grid-cols-4 gap-4">
-      {characterClasses.map((characterClass) => (
-        <ClassCard characterClass={characterClass} />
+    <ul className="grid grid-cols-4 gap-6">
+      {characterClasses.map((characterClass, i) => (
+        <motion.li
+          initial={{ opacity: 0, translateX: -100, translateY: -100 }}
+          animate={{
+            opacity: 1,
+            translateX: 0,
+            translateY: 0,
+            transition: {
+              x: { type: "spring", stiffness: 100 },
+              duration: 0.4,
+              delay: i * 0.1,
+            },
+          }}
+        >
+          <ClassCard characterClass={characterClass} />
+        </motion.li>
       ))}
-    </div>
+    </ul>
   );
 };
-
-export { DashboardGrid };

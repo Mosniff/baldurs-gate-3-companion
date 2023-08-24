@@ -5,7 +5,7 @@ type Props = {
   characterClass: CharacterClass;
 };
 
-const ClassCard = ({ characterClass }: Props) => {
+export const ClassCard = ({ characterClass }: Props) => {
   return (
     <Card
       title={characterClass}
@@ -14,5 +14,3 @@ const ClassCard = ({ characterClass }: Props) => {
     />
   );
 };
-
-export { ClassCard };
