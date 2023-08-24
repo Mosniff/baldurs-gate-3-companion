@@ -1,4 +1,6 @@
-type CharacterClass =
+export type CharacterClass = { name: CharacterClassName };
+
+export type CharacterClassName =
   | "barbarian"
   | "bard"
   | "cleric"
@@ -11,5 +13,3 @@ type CharacterClass =
   | "sorcerer"
   | "warlock"
   | "wizard";
-
-export type { CharacterClass };

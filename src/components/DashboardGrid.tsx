@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import { ClassCard } from "./ClassCard";
-import { CharacterClass } from "@/types/CharacterClass";
+import { CharacterClassName } from "@/types/CharacterClass";
 import { motion } from "framer-motion";
 
 type Props = {};
 
-const characterClasses: CharacterClass[] = [
+const characterClasses: CharacterClassName[] = [
   "barbarian",
   "bard",
   "cleric",
@@ -26,6 +26,7 @@ export const DashboardGrid = ({}: Props) => {
     <ul className="grid grid-cols-4 gap-6">
       {characterClasses.map((characterClass, i) => (
         <motion.li
+          key={characterClass}
           initial={{ opacity: 0, translateX: -100, translateY: -100 }}
           animate={{
             opacity: 1,
@@ -38,7 +39,7 @@ export const DashboardGrid = ({}: Props) => {
             },
           }}
         >
-          <ClassCard characterClass={characterClass} />
+          <ClassCard characterClassName={characterClass} />
         </motion.li>
       ))}
     </ul>

@@ -1,17 +1,17 @@
-import { CharacterClass } from "@/types/CharacterClass";
+import { CharacterClassName } from "@/types/CharacterClass";
 import { Card } from "./Card";
 
 type Props = {
-  characterClass: CharacterClass;
+  characterClassName: CharacterClassName;
 };
 
-export const ClassCard = ({ characterClass }: Props) => {
+export const ClassCard = ({ characterClassName }: Props) => {
   return (
     <Card
-      title={characterClass}
-      imageAlt={characterClass}
-      imagePath={`/class-emblems/${characterClass}.webp`}
-      href={`/character-classes/${characterClass}`}
+      title={characterClassName}
+      imageAlt={characterClassName}
+      imagePath={`/class-emblems/${characterClassName}.webp`}
+      href={`/character-classes/${characterClassName}`}
     />
   );
 };
