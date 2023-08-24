@@ -33,8 +33,8 @@ export const DashboardGrid = ({}: Props) => {
             translateY: 0,
             transition: {
               x: { type: "spring", stiffness: 100 },
-              duration: 0.4,
-              delay: i * 0.1,
+              duration: 0.2,
+              delay: i * 0.05,
             },
           }}
         >
