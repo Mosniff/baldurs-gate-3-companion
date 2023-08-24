@@ -11,6 +11,7 @@ export const ClassCard = ({ characterClass }: Props) => {
       title={characterClass}
       imageAlt={characterClass}
       imagePath={`/class-emblems/${characterClass}.webp`}
+      href={`/character-classes/${characterClass}`}
     />
   );
 };
