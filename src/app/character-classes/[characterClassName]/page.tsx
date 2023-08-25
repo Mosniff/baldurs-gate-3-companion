@@ -1,7 +1,7 @@
 "use client";
 import { PageWrapper } from "@/components/PageWrapper";
 import { useParams } from "next/navigation";
-import { characterClasses } from "@/data/characterClasses";
+import { characterClasses } from "@/data/characterClasses/characterClasses";
 import { CharacterClassName } from "@/types/CharacterClass";
 import { CharacterClassPage } from "@/components/pages/CharacterClassPage";
 
