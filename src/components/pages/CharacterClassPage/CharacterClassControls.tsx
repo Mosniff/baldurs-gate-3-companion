@@ -19,8 +19,8 @@ export const CharacterClassControls = ({
   decrementSubclass,
 }: Props) => {
   return (
-    <CharacterClassPageSection>
-      <div className="flex gap-12 text-3xl justify-center">
+    <CharacterClassPageSection className="h-full flex items-center justify-center">
+      <div className="flex gap-12 text-3xl">
         <div className="flex gap-4">
           <span>Level</span>
           <button onClick={decrementLevel}>{`<`}</button>

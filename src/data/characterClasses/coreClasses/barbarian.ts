@@ -6,10 +6,7 @@ export const barbarian: CharacterClass = {
   abilities: {
     level1: ["unarmored defence", "rage"],
     level2: ["danger sense", "reckless attack"],
-    level3: [
-      "additional rage charge",
-      "pick subclass (wildheart, berserker, wild magic)",
-    ],
+    level3: ["additional rage charge", "pick subclass"],
     level4: ["feat"],
     level5: ["extra attack", "fast movement"],
     level6: ["additional rage charge"],

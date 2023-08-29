@@ -45,20 +45,18 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
 
   return (
     <div className="bg-companion-gold p-4 rounded flex flex-col gap-4">
-      <div className="flex justify-between items-center gap-8">
-        <div className="w-72">
-          <ClassCard characterClassName={characterClass.name} />
-        </div>
-        <div className="flex-grow">
-          <CharacterClassControls
-            currentLevel={currentLevel}
-            incrementLevel={incrementLevel}
-            decrementLevel={decrementLevel}
-            selectedSubclass={selectedSubclass}
-            incrementSubclass={incrementSubclass}
-            decrementSubclass={decrementSubclass}
-          />
-        </div>
+      <div className="grid gap-8" style={{ gridTemplateColumns: "auto 1fr" }}>
+        {/* <div className="w-72"> */}
+        <ClassCard characterClassName={characterClass.name} titleCard={true} />
+        {/* </div> */}
+        <CharacterClassControls
+          currentLevel={currentLevel}
+          incrementLevel={incrementLevel}
+          decrementLevel={decrementLevel}
+          selectedSubclass={selectedSubclass}
+          incrementSubclass={incrementSubclass}
+          decrementSubclass={decrementSubclass}
+        />
       </div>
       <div className="flex gap-4">
         <div className="w-3/4">

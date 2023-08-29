@@ -2,35 +2,62 @@ import {
   CharacterClass,
   CharacterClassAbilities,
 } from "@/types/CharacterClass";
-import { characterClasses } from "@/data/characterClasses/characterClasses";
 import { CharacterClassPageSection } from "./CharacterClassPageSection";
-import { CharacterClassName } from "@/types/CharacterClass";
 import { CharacterSubclass } from "@/types/CharacterSubclass";
 
 type ProgressionTableCellProps = {
   contents: string[];
+  headerCell?: boolean;
+  centered?: boolean;
 };
 
-const ProgressionTableCell = ({ contents }: ProgressionTableCellProps) => {
-  return <div className="border border-white">{contents}</div>;
+const ProgressionTableCell = ({
+  contents,
+  headerCell = false,
+  centered = false,
+}: ProgressionTableCellProps) => {
+  return (
+    <div
+      className={`flex border border-white capitalize items-center${
+        headerCell ? " p-2" : " p-1"
+      }${centered ? " justify-center" : ""}
+      `}
+    >
+      {contents.join(", ")}
+    </div>
+  );
 };
 
 type ProgressionTableRowProps = {
   contents1: string[];
   contents2: string[];
   contents3: string[];
+  headerRow?: boolean;
 };
 
 const ProgressionTableRow = ({
   contents1,
   contents2,
   contents3,
+  headerRow = false,
 }: ProgressionTableRowProps) => {
   return (
     <>
-      <ProgressionTableCell contents={contents1} />
-      <ProgressionTableCell contents={contents2} />
-      <ProgressionTableCell contents={contents3} />
+      <ProgressionTableCell
+        contents={contents1}
+        headerCell={headerRow}
+        centered={true}
+      />
+      <ProgressionTableCell
+        contents={contents2}
+        headerCell={headerRow}
+        centered={headerRow}
+      />
+      <ProgressionTableCell
+        contents={contents3}
+        headerCell={headerRow}
+        centered={headerRow}
+      />
     </>
   );
 };
@@ -48,11 +75,12 @@ export const CharacterClassProgressionTable = ({
     <CharacterClassPageSection>
       <div className="flex flex-col gap-4 text-2xl justify-center">
         <h2>Progression</h2>
-        <div className="grid grid-cols-3">
+        <div className="grid" style={{ gridTemplateColumns: "auto 5fr 5fr" }}>
           <ProgressionTableRow
             contents1={["Level"]}
             contents2={[characterClass.name]}
             contents3={[selectedSubclass.name]}
+            headerRow={true}
           />
           {Object.keys(characterClass.abilities).map((level, i) => (
             <ProgressionTableRow
