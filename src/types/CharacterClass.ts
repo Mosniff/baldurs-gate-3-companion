@@ -32,19 +32,39 @@ export type CharacterClassName =
   | "warlock"
   | "wizard";
 
+export type AbilityCost = {
+  resource: "rage charge";
+  value: number;
+};
+
+export type Ability = {
+  name: string;
+  information: string[];
+  imagePath?: string;
+  type?: string;
+  activeProperties?: {
+    actionType: "bonus action" | "action" | "reaction";
+    cost?: AbilityCost;
+    range?: string;
+    duration?: number;
+    targetingType?: "attack roll";
+    recharge?: string;
+  };
+};
+
 export type CharacterClassAbilities = {
-  level1: string[];
-  level2: string[];
-  level3: string[];
-  level4: string[];
-  level5: string[];
-  level6: string[];
-  level7: string[];
-  level8: string[];
-  level9: string[];
-  level10: string[];
-  level11: string[];
-  level12: string[];
+  level1: Ability[];
+  level2: Ability[];
+  level3: Ability[];
+  level4: Ability[];
+  level5: Ability[];
+  level6: Ability[];
+  level7: Ability[];
+  level8: Ability[];
+  level9: Ability[];
+  level10: Ability[];
+  level11: Ability[];
+  level12: Ability[];
 };
 
 type weaponProficiency = "simple" | "martial";

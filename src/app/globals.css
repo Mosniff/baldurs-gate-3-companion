@@ -29,3 +29,11 @@ body {
 :root {
   --companion-gold: #ab966f;
 }
+
+.expanded-icon {
+  transform: rotate(-90deg);
+}
+
+.expanded-icon--expanded {
+  transform: rotate(0deg);
+}

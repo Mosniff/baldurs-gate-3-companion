@@ -1,5 +1,5 @@
 import { CharacterSubclass } from "@/types/CharacterSubclass";
-import { barbarian } from "../coreClasses/barbarian";
+import { barbarianAbilities } from "@/data/abilities";
 
 export const wildheart: CharacterSubclass = {
   coreClass: "barbarian",
@@ -7,14 +7,17 @@ export const wildheart: CharacterSubclass = {
   abilities: {
     level1: [],
     level2: [],
-    level3: ["speak with animals", "bestial heart"],
+    level3: [
+      barbarianAbilities["speak with animals"],
+      barbarianAbilities["bestial heart"],
+    ],
     level4: [],
     level5: [],
-    level6: ["animal aspect"],
+    level6: [barbarianAbilities["animal aspect"]],
     level7: [],
-    level8: ["land's stride: difficult terrain"],
+    level8: [barbarianAbilities["land's stride: difficult terrain"]],
     level9: [],
-    level10: ["animal aspect"],
+    level10: [barbarianAbilities["animal aspect"]],
     level11: [],
     level12: [],
   },
