@@ -30,6 +30,10 @@ body {
   --companion-gold: #ab966f;
 }
 
+body {
+  background-image: url("/background.webp");
+}
+
 .expanded-icon {
   transform: rotate(-90deg);
 }

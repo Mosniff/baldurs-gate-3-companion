@@ -17,6 +17,12 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
   const [selectedSubclass, setSelectedSubclass] = useState(
     characterClass.subclasses[selectedSubclassIndex]
   );
+  const [STR, setSTR] = useState(10);
+  const [DEX, setDEX] = useState(10);
+  const [CON, setCON] = useState(10);
+  const [INT, setINT] = useState(10);
+  const [WIS, setWIS] = useState(10);
+  const [CHA, setCHA] = useState(10);
 
   const incrementLevel = () => {
     currentLevel < 12
@@ -46,9 +52,7 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
   return (
     <div className="bg-companion-gold p-4 rounded flex flex-col gap-4">
       <div className="grid gap-8" style={{ gridTemplateColumns: "auto 1fr" }}>
-        {/* <div className="w-72"> */}
         <ClassCard characterClassName={characterClass.name} titleCard={true} />
-        {/* </div> */}
         <CharacterClassControls
           currentLevel={currentLevel}
           incrementLevel={incrementLevel}
@@ -56,6 +60,14 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
           selectedSubclass={selectedSubclass}
           incrementSubclass={incrementSubclass}
           decrementSubclass={decrementSubclass}
+          stats={{
+            STR: { value: STR, setter: setSTR },
+            DEX: { value: DEX, setter: setDEX },
+            CON: { value: CON, setter: setCON },
+            INT: { value: INT, setter: setINT },
+            WIS: { value: WIS, setter: setWIS },
+            CHA: { value: CHA, setter: setCHA },
+          }}
         />
       </div>
       <div className="flex gap-4">
