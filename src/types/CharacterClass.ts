@@ -32,24 +32,29 @@ export type CharacterClassName =
   | "warlock"
   | "wizard";
 
-export type AbilityCost = {
-  resource: "rage charge";
-  value: number;
-};
+// export type AbilityCost = {
+//   resource: "rage charge";
+//   value: number;
+// };
+
+// export type Ability = {
+//   name: string;
+//   information: string[];
+//   imagePath?: string;
+//   type?: string;
+//   activeProperties?: {
+//     actionType: "bonus action" | "action" | "reaction";
+//     cost?: AbilityCost;
+//     range?: string;
+//     duration?: number;
+//     targetingType?: "attack roll" | "wisdom save";
+//     recharge?: "once per turn";
+//   };
+// };
 
 export type Ability = {
   name: string;
-  information: string[];
-  imagePath?: string;
-  type?: string;
-  activeProperties?: {
-    actionType: "bonus action" | "action" | "reaction";
-    cost?: AbilityCost;
-    range?: string;
-    duration?: number;
-    targetingType?: "attack roll";
-    recharge?: string;
-  };
+  url: string;
 };
 
 export type CharacterClassAbilities = {
