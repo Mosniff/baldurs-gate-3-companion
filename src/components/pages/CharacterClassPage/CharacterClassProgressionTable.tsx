@@ -65,6 +65,7 @@ export const CharacterClassProgressionTable = ({
           />
           {Object.keys(characterClass.abilities).map((level, i) => (
             <ProgressionTableRow
+              key={level}
               contents1={(i + 1).toString()}
               contents2={
                 characterClass.abilities[

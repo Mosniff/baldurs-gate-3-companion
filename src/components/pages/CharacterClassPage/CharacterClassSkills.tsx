@@ -16,8 +16,8 @@ export const CharacterClassSkills = ({
         <h2>Skills - Pick {skillpoints}:</h2>
         <div className="flex justify-between text-xl capitalize">
           <ul className="text-lg list-disc px-8 py-2">
-            {availableSkills.map((skill, i) => (
-              <li>{skill}</li>
+            {availableSkills.map((skill) => (
+              <li key={skill}>{skill}</li>
             ))}
           </ul>
         </div>
