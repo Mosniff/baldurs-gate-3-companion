@@ -52,12 +52,12 @@ export const CharacterClassControls = ({
     <CharacterClassPageSection className="h-full flex items-center justify-center">
       <div className="flex gap-12 text-3xl justify-between w-full px-6">
         <div className="flex gap-8">
-          <div className="flex gap-4 items-center">
+          {/* <div className="flex gap-4 items-center">
             <span>Level</span>
             <button onClick={decrementLevel}>{`<`}</button>
             <span className="text-companion-gold px-4">{currentLevel}</span>
             <button onClick={incrementLevel}>{`>`}</button>
-          </div>
+          </div> */}
           <div className="flex gap-4 items-center">
             <span>Subclass</span>
             <button onClick={decrementSubclass}>{`<`}</button>
@@ -67,7 +67,7 @@ export const CharacterClassControls = ({
             <button onClick={incrementSubclass}>{`>`}</button>
           </div>
         </div>
-        <div className="flex gap-6 text-base">
+        {/* <div className="flex gap-6 text-base">
           {Object.keys(stats).map((stat) => (
             <Stat
               name={stat}
@@ -75,7 +75,7 @@ export const CharacterClassControls = ({
               setter={stats[stat].setter}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </CharacterClassPageSection>
   );

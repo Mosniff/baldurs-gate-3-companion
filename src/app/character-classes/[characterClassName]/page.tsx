@@ -10,8 +10,6 @@ export default function Home() {
   const characterClass =
     characterClasses[`${params.characterClassName as CharacterClassName}`];
 
-  console.log(characterClass);
-
   return (
     <PageWrapper>
       <CharacterClassPage characterClass={characterClass} />

@@ -6,6 +6,7 @@ import { CharacterClassProficiencies } from "./CharacterClassProficiencies";
 import { CharacterClassProgressionTable } from "./CharacterClassProgressionTable";
 import { CharacterClassHitpoints } from "./CharacterClassHitpoints";
 import { useState } from "react";
+import { CharacterClassSkills } from "./CharacterClassSkills";
 
 type Props = { characterClass: CharacterClass };
 
@@ -70,29 +71,32 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
           }}
         />
       </div>
-      <div className="flex gap-4">
-        <div className="w-3/4">
-          <CharacterClassProficiencies
-            weaponProficiencies={[
-              ...characterClass.proficiencies.weapon,
-              ...selectedSubclass.proficiencies.weapon,
-            ]}
-            armourProficiencies={[
-              ...characterClass.proficiencies.armour,
-              ...selectedSubclass.proficiencies.armour,
-            ]}
-            savingThrowProficiencies={[
-              ...characterClass.proficiencies.savingThrow,
-              ...selectedSubclass.proficiencies.savingThrow,
-            ]}
-          />
-        </div>
-        <div className="w-1/4">
-          <CharacterClassHitpoints
-            firstLevel={characterClass.hitpointsAtStart}
-            perLevel={characterClass.hitpointsPerLevel}
-          />
-        </div>
+      <div
+        className="grid gap-8"
+        style={{ gridTemplateColumns: "2fr 1fr 1fr" }}
+      >
+        <CharacterClassProficiencies
+          weaponProficiencies={[
+            ...characterClass.proficiencies.weapon,
+            ...selectedSubclass.proficiencies.weapon,
+          ]}
+          armourProficiencies={[
+            ...characterClass.proficiencies.armour,
+            ...selectedSubclass.proficiencies.armour,
+          ]}
+          savingThrowProficiencies={[
+            ...characterClass.proficiencies.savingThrow,
+            ...selectedSubclass.proficiencies.savingThrow,
+          ]}
+        />
+        <CharacterClassSkills
+          skillpoints={characterClass.numberOfSkills}
+          availableSkills={characterClass.availableSkills}
+        />
+        <CharacterClassHitpoints
+          firstLevel={characterClass.hitpointsAtStart}
+          perLevel={characterClass.hitpointsPerLevel}
+        />
       </div>
       <div>
         <CharacterClassProgressionTable
