@@ -1,37 +1,19 @@
 import {
+  Ability,
   CharacterClass,
   CharacterClassAbilities,
 } from "@/types/CharacterClass";
 import { CharacterClassPageSection } from "./CharacterClassPageSection";
 import { CharacterSubclass } from "@/types/CharacterSubclass";
-
-type ProgressionTableCellProps = {
-  contents: string[];
-  headerCell?: boolean;
-  centered?: boolean;
-};
-
-const ProgressionTableCell = ({
-  contents,
-  headerCell = false,
-  centered = false,
-}: ProgressionTableCellProps) => {
-  return (
-    <div
-      className={`flex border border-white capitalize items-center${
-        headerCell ? " p-2" : " p-1"
-      }${centered ? " justify-center" : ""}
-      `}
-    >
-      {contents.join(", ")}
-    </div>
-  );
-};
+import {
+  ProgressionTableCell,
+  ProgressionTableHeaderCell,
+} from "@/components/pages/CharacterClassPage/CharacterClassProgressionTableCell";
 
 type ProgressionTableRowProps = {
-  contents1: string[];
-  contents2: string[];
-  contents3: string[];
+  contents1: string | Ability[];
+  contents2: string | Ability[];
+  contents3: string | Ability[];
   headerRow?: boolean;
 };
 
@@ -43,21 +25,20 @@ const ProgressionTableRow = ({
 }: ProgressionTableRowProps) => {
   return (
     <>
-      <ProgressionTableCell
-        contents={contents1}
-        headerCell={headerRow}
-        centered={true}
-      />
-      <ProgressionTableCell
-        contents={contents2}
-        headerCell={headerRow}
-        centered={headerRow}
-      />
-      <ProgressionTableCell
-        contents={contents3}
-        headerCell={headerRow}
-        centered={headerRow}
-      />
+      {!headerRow && (
+        <>
+          <ProgressionTableHeaderCell contents={contents1 as string} />
+          <ProgressionTableCell contents={contents2 as Ability[]} />
+          <ProgressionTableCell contents={contents3 as Ability[]} />
+        </>
+      )}
+      {headerRow && (
+        <>
+          <ProgressionTableHeaderCell contents={contents1 as string} />
+          <ProgressionTableHeaderCell contents={contents2 as string} />
+          <ProgressionTableHeaderCell contents={contents3 as string} />
+        </>
+      )}
     </>
   );
 };
@@ -77,14 +58,14 @@ export const CharacterClassProgressionTable = ({
         <h2>Progression</h2>
         <div className="grid" style={{ gridTemplateColumns: "auto 5fr 5fr" }}>
           <ProgressionTableRow
-            contents1={["Level"]}
-            contents2={[characterClass.name]}
-            contents3={[selectedSubclass.name]}
+            contents1={"Level"}
+            contents2={characterClass.name}
+            contents3={selectedSubclass.name}
             headerRow={true}
           />
           {Object.keys(characterClass.abilities).map((level, i) => (
             <ProgressionTableRow
-              contents1={[(i + 1).toString()]}
+              contents1={(i + 1).toString()}
               contents2={
                 characterClass.abilities[
                   `${level}` as keyof CharacterClassAbilities
@@ -97,27 +78,6 @@ export const CharacterClassProgressionTable = ({
               }
             />
           ))}
-
-          {/* <ProgressionTableRow
-            contents1="1"
-            contents2="ability"
-            contents3="other ability"
-          />
-          <ProgressionTableRow
-            contents1="2"
-            contents2="ability"
-            contents3="other ability"
-          />
-          <ProgressionTableRow
-            contents1="3"
-            contents2="ability"
-            contents3="other ability"
-          />
-          <ProgressionTableRow
-            contents1="4"
-            contents2="ability"
-            contents3="other ability"
-          /> */}
         </div>
       </div>
     </CharacterClassPageSection>

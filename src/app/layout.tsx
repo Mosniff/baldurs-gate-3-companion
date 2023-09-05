@@ -30,7 +30,11 @@ export default function RootLayout({
     <html lang="en" className={`${quadrat.variable} font-sans`}>
       <body className={inter.className}>
         <NavBar />
-        {children}
+        <main className="flex justify-center">
+          <div className="w-full" style={{ maxWidth: 1900 }}>
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

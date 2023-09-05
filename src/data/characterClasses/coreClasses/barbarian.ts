@@ -1,21 +1,34 @@
 import { CharacterClass } from "@/types/CharacterClass";
 import { barbarianSubclasses } from "../subClasses";
+import { commonAbilities, barbarianAbilities } from "@/data/abilities/";
 
 export const barbarian: CharacterClass = {
   name: "barbarian",
   abilities: {
-    level1: ["unarmored defence", "rage"],
-    level2: ["danger sense", "reckless attack"],
-    level3: ["additional rage charge", "pick subclass"],
-    level4: ["feat"],
-    level5: ["extra attack", "fast movement"],
-    level6: ["additional rage charge"],
-    level7: ["feral instinct"],
-    level8: ["feat"],
-    level9: ["brutal critical"],
+    level1: [
+      barbarianAbilities["unarmored defence"],
+      barbarianAbilities["rage"],
+    ],
+    level2: [
+      barbarianAbilities["danger sense"],
+      barbarianAbilities["reckless attack"],
+    ],
+    level3: [barbarianAbilities["additional rage charge"]],
+    level4: [commonAbilities["feat"]],
+    level5: [
+      commonAbilities["extra attack"],
+      barbarianAbilities["fast movement"],
+    ],
+    level6: [barbarianAbilities["additional rage charge"]],
+    level7: [barbarianAbilities["feral instinct"]],
+    level8: [commonAbilities["feat"]],
+    level9: [barbarianAbilities["brutal critical"]],
     level10: [],
-    level11: ["relentless rage"],
-    level12: ["additional rage charge", "feat"],
+    level11: [barbarianAbilities["relentless rage"]],
+    level12: [
+      barbarianAbilities["additional rage charge"],
+      commonAbilities["feat"],
+    ],
   },
   proficiencies: {
     weapon: ["simple", "martial"],

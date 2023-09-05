@@ -1,5 +1,5 @@
+import { barbarianAbilities } from "@/data/abilities";
 import { CharacterSubclass } from "@/types/CharacterSubclass";
-import { barbarian } from "../coreClasses/barbarian";
 
 export const berserker: CharacterSubclass = {
   coreClass: "barbarian",
@@ -7,14 +7,18 @@ export const berserker: CharacterSubclass = {
   abilities: {
     level1: [],
     level2: [],
-    level3: ["frenzy", "frenzied strike", "enraged throw"],
+    level3: [
+      barbarianAbilities["frenzy"],
+      barbarianAbilities["frenzied strike"],
+      barbarianAbilities["enraged throw"],
+    ],
     level4: [],
     level5: [],
-    level6: ["mindless rage"],
+    level6: [barbarianAbilities["mindless rage"]],
     level7: [],
     level8: [],
     level9: [],
-    level10: ["intimidating presence"],
+    level10: [barbarianAbilities["intimidating presence"]],
     level11: [],
     level12: [],
   },
