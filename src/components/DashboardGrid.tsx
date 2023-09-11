@@ -23,7 +23,7 @@ const characterClasses: CharacterClassName[] = [
 
 export const DashboardGrid = ({}: Props) => {
   return (
-    <ul className="grid grid-cols-4 gap-6">
+    <ul className="grid sm:grid-cols-4 gap-6">
       {characterClasses.map((characterClass, i) => (
         <motion.li
           key={characterClass}

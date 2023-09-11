@@ -11,7 +11,7 @@ export const CharacterClassSkills = ({
   skillpoints,
 }: Props) => {
   return (
-    <CharacterClassPageSection>
+    <CharacterClassPageSection className="h-full">
       <div className="flex flex-col gap-4 text-2xl justify-center">
         <h2>Skills - Pick {skillpoints}:</h2>
         <div className="flex justify-between text-xl capitalize">

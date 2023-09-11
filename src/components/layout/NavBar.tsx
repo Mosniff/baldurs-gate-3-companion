@@ -4,9 +4,9 @@ type Props = {};
 
 function NavBar({}: Props) {
   return (
-    <nav className="bg-black h-10 text-white">
+    <nav className="bg-black text-white font-sans p-2 text-xl">
       <Link href="/">
-        <div className="capitalize">Dashboard</div>
+        <div className="capitalize">Classes</div>
       </Link>
     </nav>
   );

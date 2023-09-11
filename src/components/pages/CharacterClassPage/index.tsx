@@ -51,9 +51,11 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
   };
 
   return (
-    <div className="bg-companion-gold p-4 rounded flex flex-col gap-4">
-      <div className="grid gap-8" style={{ gridTemplateColumns: "auto 1fr" }}>
+    <div className="bg-companion-gold p-4 rounded grid gap-8 overflow-hidden character-page-grid">
+      <div className="character-page-grid__class-card">
         <ClassCard characterClassName={characterClass.name} titleCard={true} />
+      </div>
+      <div className="character-page-grid__class-controls">
         <CharacterClassControls
           currentLevel={currentLevel}
           incrementLevel={incrementLevel}
@@ -71,10 +73,7 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
           }}
         />
       </div>
-      <div
-        className="grid gap-8"
-        style={{ gridTemplateColumns: "2fr 1fr 1fr" }}
-      >
+      <div className="character-page-grid__class-proficiencies">
         <CharacterClassProficiencies
           weaponProficiencies={[
             ...characterClass.proficiencies.weapon,
@@ -89,16 +88,20 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
             ...selectedSubclass.proficiencies.savingThrow,
           ]}
         />
+      </div>
+      <div className="character-page-grid__class-skills">
         <CharacterClassSkills
           skillpoints={characterClass.numberOfSkills}
           availableSkills={characterClass.availableSkills}
         />
+      </div>
+      <div className="character-page-grid__class-hitpoints">
         <CharacterClassHitpoints
           firstLevel={characterClass.hitpointsAtStart}
           perLevel={characterClass.hitpointsPerLevel}
         />
       </div>
-      <div>
+      <div className="character-page-grid__class-progression-table">
         <CharacterClassProgressionTable
           characterClass={characterClass}
           selectedSubclass={selectedSubclass}

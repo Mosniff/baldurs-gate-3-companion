@@ -8,7 +8,7 @@ type Props = { children: React.ReactNode; className?: string };
 export const PageWrapper = ({ children, className }: Props) => {
   return (
     <motion.div
-      className={`p-10 ${className || ""}`}
+      className={`page-wrapper ${className || ""}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}

@@ -32,10 +32,10 @@ export const CharacterClassProficiencies = ({
   savingThrowProficiencies,
 }: Props) => {
   return (
-    <CharacterClassPageSection>
+    <CharacterClassPageSection className="h-full">
       <div className="flex flex-col gap-4 text-2xl justify-center">
         <h2>Proficiencies</h2>
-        <div className="flex justify-between text-xl">
+        <div className="flex flex-col sm:flex-row justify-between text-xl">
           <ProficiencyList name="weapons" proficiencies={weaponProficiencies} />
           <ProficiencyList name="armour" proficiencies={armourProficiencies} />
           <ProficiencyList

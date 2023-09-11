@@ -1,0 +1,64 @@
+// page-wrapper
+
+.page-wrapper {
+  @apply p-4;
+}
+
+@screen sm {
+  .page-wrapper {
+    @apply p-10;
+  }
+}
+
+// /page-wrapper
+
+// character-page-grid
+
+.character-page-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "class-card"
+    "controls"
+    "proficiencies"
+    "skills"
+    "hitpoints"
+    "progression-table";
+}
+
+.character-page-grid__class-card {
+  grid-area: class-card;
+}
+
+.character-page-grid__class-controls {
+  grid-area: controls;
+}
+
+.character-page-grid__class-proficiencies {
+  grid-area: proficiencies;
+}
+
+.character-page-grid__class-skills {
+  grid-area: skills;
+}
+
+.character-page-grid__class-hitpoints {
+  grid-area: hitpoints;
+}
+
+.character-page-grid__class-progression-table {
+  grid-area: progression-table;
+}
+
+@screen sm {
+  .character-page-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "class-card controls controls controls"
+      "proficiencies proficiencies skills hitpoints"
+      "progression-table progression-table progression-table progression-table";
+  }
+}
+
+// /character-page-grid

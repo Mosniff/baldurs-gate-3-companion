@@ -43,6 +43,38 @@ const ProgressionTableRow = ({
   );
 };
 
+type ProgressionTableMobileRowProps = {
+  level: string;
+  classAbilities: Ability[];
+  subclassAbilities: Ability[];
+};
+
+const ProgressionTableMobileRow = ({
+  level,
+  classAbilities,
+  subclassAbilities,
+}: ProgressionTableMobileRowProps) => {
+  return (
+    <div>
+      <ProgressionTableHeaderCell contents={`Level ${level}`} />
+      {classAbilities.length > 0 && (
+        <ProgressionTableCell
+          contents={classAbilities}
+          mobile={true}
+          subclassCell={false}
+        />
+      )}
+      {subclassAbilities.length > 0 && (
+        <ProgressionTableCell
+          contents={subclassAbilities}
+          mobile={true}
+          subclassCell={true}
+        />
+      )}
+    </div>
+  );
+};
+
 type Props = {
   characterClass: CharacterClass;
   selectedSubclass: CharacterSubclass;
@@ -54,7 +86,8 @@ export const CharacterClassProgressionTable = ({
 }: Props) => {
   return (
     <CharacterClassPageSection>
-      <div className="flex flex-col gap-4 text-2xl justify-center">
+      {/* desktop */}
+      <div className="hidden sm:flex flex-col gap-4 text-2xl justify-center">
         <h2>Progression</h2>
         <div className="grid" style={{ gridTemplateColumns: "auto 5fr 5fr" }}>
           <ProgressionTableRow
@@ -81,6 +114,27 @@ export const CharacterClassProgressionTable = ({
           ))}
         </div>
       </div>
+      {/* /desktop */}
+      {/* mobile */}
+      <div className="sm:hidden flex flex-col gap-4 text-2xl justify-center">
+        {Object.keys(characterClass.abilities).map((level, i) => (
+          <ProgressionTableMobileRow
+            key={level}
+            level={(i + 1).toString()}
+            classAbilities={
+              characterClass.abilities[
+                `${level}` as keyof CharacterClassAbilities
+              ]
+            }
+            subclassAbilities={
+              selectedSubclass.abilities[
+                `${level}` as keyof CharacterClassAbilities
+              ]
+            }
+          />
+        ))}
+      </div>
+      {/* /mobile */}
     </CharacterClassPageSection>
   );
 };

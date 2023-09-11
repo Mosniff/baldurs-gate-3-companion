@@ -1,5 +1,6 @@
 import NavBar from "@/components/layout/NavBar";
 import "./globals.css";
+import "./styles.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import quadratDemiboldFont from "@next/font/local";
