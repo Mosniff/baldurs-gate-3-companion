@@ -49,7 +49,7 @@ export const CharacterClassControls = ({
   stats,
 }: Props) => {
   return (
-    <CharacterClassPageSection className="h-full flex justify-center text-3xl">
+    <CharacterClassPageSection className="h-full flex justify-center text-2xl sm:text-3xl">
       <div className="flex">
         <div className="flex flex-col gap-4 items-center sm:flex-row sm:justify-center">
           <h4>Subclass</h4>

@@ -114,6 +114,69 @@ export const barbarianAbilities: { [key: string]: Ability } = {
   },
 };
 
+export const bardAbilities: { [key: string]: Ability } = {
+  spellcasting: {
+    name: "spellcasting",
+    url: "https://bg3.wiki/wiki/Bard#Spellcasting",
+  },
+  "bardic inspiration (d6)": {
+    name: "bardic inspiration (d6)",
+    url: "https://bg3.wiki/wiki/Bardic_Inspiration",
+  },
+  "song of rest": {
+    name: "song of rest",
+    url: "https://bg3.wiki/wiki/Song_of_Rest",
+  },
+  "jack of all trades": {
+    name: "jack of all trades",
+    url: "https://bg3.wiki/wiki/Jack_of_All_Trades",
+  },
+  expertise: {
+    name: "expertise",
+    url: "https://bg3.wiki/wiki/Expertise",
+  },
+  "improved bardic inspiration (d8)": {
+    name: "improved bardic inspiration (d8)",
+    url: "https://bg3.wiki/wiki/Improved_Bardic_Inspiration",
+  },
+  "font of inspiration": {
+    name: "font of inspiration",
+    url: "https://bg3.wiki/wiki/Font_of_Inspiration",
+  },
+  countercharm: {
+    name: "countercharm",
+    url: "https://bg3.wiki/wiki/Countercharm",
+  },
+  "improved bardic inspiration (d10)": {
+    name: "improved bardic inspiration (d10)",
+    url: "https://bg3.wiki/wiki/Improved_Bardic_Inspiration",
+  },
+  "magical secrets": {
+    name: "magical secrets",
+    url: "https://bg3.wiki/wiki/Magical_Secrets",
+  },
+  "gain proficiency in 3 skills": {
+    name: "gain proficiency in 3 skills",
+    url: "https://bg3.wiki/wiki/Proficiency",
+  },
+  "cutting words": {
+    name: "cutting words",
+    url: "https://bg3.wiki/wiki/Cutting_Words",
+  },
+  "combat inspiration": {
+    name: "combat inspiration",
+    url: "https://bg3.wiki/wiki/Combat_Inspiration",
+  },
+  "blade flourish": {
+    name: "blade flourish",
+    url: "https://bg3.wiki/wiki/Blade_Flourish",
+  },
+  "fighting style": {
+    name: "fighting style (dueling or two-weapon fighting)",
+    url: "https://bg3.wiki/wiki/Fighting_Style",
+  },
+};
+
 // export const commonAbilities: { [key: string]: Ability } = {
 //   feat: {
 //     name: "feat",

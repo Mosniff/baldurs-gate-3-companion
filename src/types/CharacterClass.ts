@@ -72,7 +72,14 @@ export type CharacterClassAbilities = {
   level12: Ability[];
 };
 
-type weaponProficiency = "simple" | "martial";
+type weaponProficiency =
+  | "simple"
+  | "martial"
+  | "hand crossbows"
+  | "rapiers"
+  | "longswords"
+  | "scimitars"
+  | "shortswords";
 
 type armourProficiency = "light" | "medium" | "heavy" | "shield";
 

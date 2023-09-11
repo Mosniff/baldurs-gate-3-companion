@@ -3,32 +3,10 @@ import type {
   CharacterClassName,
 } from "@/types/CharacterClass";
 import { barbarian } from "@/data/characterClasses/coreClasses/barbarian";
+import { bard } from "@/data/characterClasses/coreClasses/bard";
 
 // TODO
 
-export const bard: CharacterClass = {
-  name: "bard",
-  abilities: {
-    level1: [],
-    level2: [],
-    level3: [],
-    level4: [],
-    level5: [],
-    level6: [],
-    level7: [],
-    level8: [],
-    level9: [],
-    level10: [],
-    level11: [],
-    level12: [],
-  },
-  proficiencies: { weapon: [], armour: [], savingThrow: [] },
-  subclasses: [],
-  hitpointsAtStart: 0,
-  hitpointsPerLevel: 0,
-  numberOfSkills: 0,
-  availableSkills: [],
-};
 export const cleric: CharacterClass = {
   name: "cleric",
   abilities: {

@@ -51,7 +51,7 @@ export const CharacterClassPage = ({ characterClass }: Props) => {
   };
 
   return (
-    <div className="bg-companion-gold p-4 rounded grid gap-8 overflow-hidden character-page-grid">
+    <div className="bg-companion-gold p-4 rounded grid gap-4 sm:gap-8 overflow-hidden character-page-grid">
       <div className="character-page-grid__class-card">
         <ClassCard characterClassName={characterClass.name} titleCard={true} />
       </div>

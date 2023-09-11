@@ -10,4 +10,10 @@ export interface CharacterSubclass extends BaseClassType {
   coreClass: CharacterClassName;
 }
 
-export type CharacterSubclassName = "berserker" | "wildheart" | "wild magic";
+export type CharacterSubclassName =
+  | "berserker"
+  | "wildheart"
+  | "wild magic"
+  | "college of swords"
+  | "college of valour"
+  | "college of lore";
